@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-// ÇÔ¼ö ¼±¾ð
-// ³ªÁß¿¡ Çì´õÆÄÀÏ·Î ºüÁü
+// í•¨ìˆ˜ ì„ ì–¸
+// ë‚˜ì¤‘ì— í—¤ë”íŒŒì¼ë¡œ ë¹ ì§
 void Func1();
 void Func2(int hp, int mp);
 void Func3(float a);
-// C#¿¡¼­´Â »ó°ü¾øÁö¸¸ C++¿¡¼­´Â ÀÌ·¸°Ô ÇØÁÖ¾î¾ß ¼ø¼­¿¡ µû¸¥ ¿À·ù°¡ ³ªÁö¾ÊÀ½
+// C#ì—ì„œëŠ” ìƒê´€ì—†ì§€ë§Œ C++ì—ì„œëŠ” ì´ë ‡ê²Œ í•´ì£¼ì–´ì•¼ ìˆœì„œì— ë”°ë¥¸ ì˜¤ë¥˜ê°€ ë‚˜ì§€ì•ŠìŒ
 
 int main()
 {
@@ -21,10 +21,10 @@ void Func1()
 {
 	cout << "Func1" << endl;
 
-	// ¼ø¼­°¡ µÚ¹Ù²î¸é È£ÃâµÇÁö ¾Ê´Â ÀÌÀ¯
+	// ìˆœì„œê°€ ë’¤ë°”ë€Œë©´ í˜¸ì¶œë˜ì§€ ì•ŠëŠ” ì´ìœ 
 	// push 2
 	// push 1
-	// call Func2 <-- Func2¸¦ È£ÃâÇÒ ¶§ Ã£Áö ¸øÇÔ
+	// call Func2 <-- Func2ë¥¼ í˜¸ì¶œí•  ë•Œ ì°¾ì§€ ëª»í•¨
 	
 	Func2(1, 2);
 
