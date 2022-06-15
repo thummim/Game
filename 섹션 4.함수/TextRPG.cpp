@@ -42,7 +42,7 @@ void EnterBattle();
 
 int main()
 {
-	//·£´ı ½Ãµå ¼³Á¤, ¼³Á¤ÇÏÁö ¾Ê°í rand»ç¿ëÇÏ¸é °è¼Ó  µ¿ÀÏÇÑ °ª ³ª¿È
+	//ëœë¤ ì‹œë“œ ì„¤ì •, ì„¤ì •í•˜ì§€ ì•Šê³  randì‚¬ìš©í•˜ë©´ ê³„ì†  ë™ì¼í•œ ê°’ ë‚˜ì˜´
 	srand(time(0));
 
 	EnterLobby();
@@ -55,14 +55,14 @@ void EnterLobby()
 	while (true)
 	{
 		cout << "--------------------" << endl;
-		cout << "·Îºñ¿¡ ÀÔÀåÇß½À´Ï´Ù!" << endl;
+		cout << "ë¡œë¹„ì— ì…ì¥í–ˆìŠµë‹ˆë‹¤!" << endl;
 		cout << "--------------------" << endl;
 		
-		// ÇÃ·¹ÀÌ¾î Á÷¾÷ ¼±ÅÃ
+		// í”Œë ˆì´ì–´ ì§ì—… ì„ íƒ
 		SelectPlayer();
 
 		cout << "---------------------------" << endl;
-		cout << "(1) ÇÊµå ÀÔÀå (2) °ÔÀÓ Á¾·á" << endl;
+		cout << "(1) í•„ë“œ ì…ì¥ (2) ê²Œì„ ì¢…ë£Œ" << endl;
 		cout << "---------------------------" << endl;
 		
 		int input;
@@ -84,15 +84,15 @@ void SelectPlayer()
 	while (true)
 	{
 		cout << "--------------------" << endl;
-		cout << "Á÷¾÷À» °ñ¶óÁÖ¼¼¿ä!" << endl;
-		cout << "(1) ±â»ç (2) ±Ã¼ö (3) ¹ı»ç" << endl;
+		cout << "ì§ì—…ì„ ê³¨ë¼ì£¼ì„¸ìš”!" << endl;
+		cout << "(1) ê¸°ì‚¬ (2) ê¶ìˆ˜ (3) ë²•ì‚¬" << endl;
 		cout << "> ";
 
 		cin >> playerType;
 
 		if (playerType == PT_Knight)
 		{
-			cout << "±â»ç »ı¼ºÁß... !" << endl;
+			cout << "ê¸°ì‚¬ ìƒì„±ì¤‘... !" << endl;
 			hp	= 150;
 			attack = 10;
 			defence = 5;
@@ -100,7 +100,7 @@ void SelectPlayer()
 		}
 		else if (playerType == PT_Archer)
 		{
-			cout << "±Ã¼ö »ı¼ºÁß... !" << endl;
+			cout << "ê¶ìˆ˜ ìƒì„±ì¤‘... !" << endl;
 			hp = 100;
 			attack = 15;
 			defence = 3;
@@ -108,7 +108,7 @@ void SelectPlayer()
 		}
 		else if (playerType == PT_Mage)
 		{
-			cout << "¹ı»ç »ı¼ºÁß... !" << endl;
+			cout << "ë²•ì‚¬ ìƒì„±ì¤‘... !" << endl;
 			hp = 80;
 			attack = 25;
 			defence = 0;
@@ -122,7 +122,7 @@ void EnterField()
 	while (true)
 	{
 		cout << "--------------------" << endl;
-		cout << "ÇÊµå¿¡ ÀÔÀåÇß½À´Ï´Ù!" << endl;
+		cout << "í•„ë“œì— ì…ì¥í–ˆìŠµë‹ˆë‹¤!" << endl;
 		cout << "--------------------" << endl;
 
 		cout << "[PLAYER] HP : " << hp << " / ATT : " << attack << " / DEF : " << defence << endl;
@@ -130,7 +130,7 @@ void EnterField()
 		CreateRandomMonster();
 
 		cout << "--------------------" << endl;
-		cout << "(1) ÀüÅõ (2) µµÁÖ" << endl;
+		cout << "(1) ì „íˆ¬ (2) ë„ì£¼" << endl;
 		cout << "> ";
 
 		int input;
@@ -157,19 +157,19 @@ void CreateRandomMonster()
 	switch (monsterType)
 	{
 	case MT_Slime:
-		cout << "½½¶óÀÓ »ı¼ºÁß...! (HP:15 / ATT:5 / DEF:0)" << endl;
+		cout << "ìŠ¬ë¼ì„ ìƒì„±ì¤‘...! (HP:15 / ATT:5 / DEF:0)" << endl;
 		monsterHp = 15;
 		monsterAttack = 5;
 		monsterDefence = 0;
 		break;
 	case MT_Orc:
-		cout << "¿ÀÅ© »ı¼ºÁß...! (HP:40 / ATT:10 / DEF:3)" << endl;
+		cout << "ì˜¤í¬ ìƒì„±ì¤‘...! (HP:40 / ATT:10 / DEF:3)" << endl;
 		monsterHp = 40;
 		monsterAttack = 10;
 		monsterDefence = 3;
 		break;
 	case MT_Skeleton:
-		cout << "½ºÄÌ·¹Åæ »ı¼ºÁß...! (HP:80 / ATT:15 / DEF:5)" << endl;
+		cout << "ìŠ¤ì¼ˆë ˆí†¤ ìƒì„±ì¤‘...! (HP:80 / ATT:15 / DEF:5)" << endl;
 		monsterHp = 80;
 		monsterAttack = 15;
 		monsterDefence = 5;
@@ -182,34 +182,34 @@ void EnterBattle()
 	while (true)
 	{
 		int damage = attack - monsterDefence;
-		if (damage < 0) // ¸ó½ºÅÍÀÇ ¹æ¾î·ÂÀÌ ÇÃ·¹ÀÌ¾îÀÇ °ø°İ·Âº¸´Ù ³ôÀº °æ¿ì º¸Á¤
+		if (damage < 0) // ëª¬ìŠ¤í„°ì˜ ë°©ì–´ë ¥ì´ í”Œë ˆì´ì–´ì˜ ê³µê²©ë ¥ë³´ë‹¤ ë†’ì€ ê²½ìš° ë³´ì •
 			damage = 0;
 
-		//ÇÃ·¹ÀÌ¾î°¡ °ø°İÇÏ´Â »óÈ²
+		//í”Œë ˆì´ì–´ê°€ ê³µê²©í•˜ëŠ” ìƒí™©
 		monsterHp -= damage;
-		if (monsterHp < 0) // ¸ó½ºÅÍÀÇ Ã¼·ÂÀÌ À½¼ö°¡ µÇ´Â°æ¿ì º¸Á¤
+		if (monsterHp < 0) // ëª¬ìŠ¤í„°ì˜ ì²´ë ¥ì´ ìŒìˆ˜ê°€ ë˜ëŠ”ê²½ìš° ë³´ì •
 			monsterHp = 0;
 
-		cout << "¸ó½ºÅÍ ³²Àº Ã¼·Â : " << monsterHp << endl;
+		cout << "ëª¬ìŠ¤í„° ë‚¨ì€ ì²´ë ¥ : " << monsterHp << endl;
 		if (monsterHp == 0)
 		{
-			cout << "¸ó½ºÅÍ¸¦ Ã³Ä¡Çß½À´Ï´Ù!" << endl;
+			cout << "ëª¬ìŠ¤í„°ë¥¼ ì²˜ì¹˜í–ˆìŠµë‹ˆë‹¤!" << endl;
 			return;
 		}
 
 		damage = monsterAttack - defence;
-		if (damage < 0) // ¸ó½ºÅÍÀÇ ¹æ¾î·ÂÀÌ ÇÃ·¹ÀÌ¾îÀÇ °ø°İ·Âº¸´Ù ³ôÀº °æ¿ì º¸Á¤
+		if (damage < 0) // ëª¬ìŠ¤í„°ì˜ ë°©ì–´ë ¥ì´ í”Œë ˆì´ì–´ì˜ ê³µê²©ë ¥ë³´ë‹¤ ë†’ì€ ê²½ìš° ë³´ì •
 			damage = 0;
 
-		//¸ó½ºÅÍ°¡ °ø°İÇÏ´Â »óÈ²
+		//ëª¬ìŠ¤í„°ê°€ ê³µê²©í•˜ëŠ” ìƒí™©
 		hp -= damage;
 		if (hp < 0)
 			hp = 0;
 
-		cout << "ÇÃ·¹ÀÌ¾î ³²Àº Ã¼·Â : " << hp << endl;
+		cout << "í”Œë ˆì´ì–´ ë‚¨ì€ ì²´ë ¥ : " << hp << endl;
 		if (hp == 0)
 		{
-			cout << "´ç½ÅÀº »ç¸ÁÇß½À´Ï´Ù... GAME OVER" << endl;
+			cout << "ë‹¹ì‹ ì€ ì‚¬ë§í–ˆìŠµë‹ˆë‹¤... GAME OVER" << endl;
 			return;
 		}
 
